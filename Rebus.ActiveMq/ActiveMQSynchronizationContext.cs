@@ -4,7 +4,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Rebus.ActiveMq
+namespace Rebus
 {
     /// <summary>
     ///     Synchronization context that can be "pumped" in order to have it execute continuations posted back to it

@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Rebus.ActiveMq
+namespace Rebus
 {
     internal static class AsyncHelpers
     {

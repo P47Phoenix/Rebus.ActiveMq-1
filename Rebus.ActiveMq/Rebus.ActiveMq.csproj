@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
- <PropertyGroup>
+  <PropertyGroup>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Rebus</RootNamespace>
     <AssemblyName>Rebus.ActiveMq</AssemblyName>
-    <TargetFrameworks>net45;netcoreapp2.0</TargetFrameworks>
+    <TargetFrameworks>net45</TargetFrameworks>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Authors>mookid8000</Authors>
     <PackageLicenseUrl>https://raw.githubusercontent.com/rebus-org/Rebus/master/LICENSE.md</PackageLicenseUrl>
@@ -38,21 +38,12 @@
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net45' ">
     <DefineConstants>NET45</DefineConstants>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.0' ">
-    <DefineConstants>NETCOREAPP2_0</DefineConstants>
-  </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Properties\AssemblyInfo.cs" />
     <None Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="rebus" Version="4.2.1" />
-  </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.0' ">
-    <PackageReference Include="System.Diagnostics.Process" Version="4.3.0" />
-    <PackageReference Include="Apache.NMS.ActiveMQ.NetCore">
-      <Version>1.7.2</Version>
-    </PackageReference>
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
     <PackageReference Include="Apache.NMS.ActiveMQ">

@@ -3,8 +3,9 @@ using System.Collections.Concurrent;
 using System.Threading.Tasks;
 using Apache.NMS;
 using Apache.NMS.ActiveMQ;
+using Rebus.ActiveMq;
 
-namespace Rebus.ActiveMq
+namespace Rebus
 {
 
     internal class ActiveMqSessionHelper : IActiveMqSessionHelper

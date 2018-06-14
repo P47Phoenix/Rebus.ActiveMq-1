@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ using Apache.NMS.Util;
 using Rebus.Messages;
 using Rebus.Transport;
 
-namespace Rebus.ActiveMq
+namespace Rebus
 {
     internal class ActiveMqTransport : ITransport
     {
@@ -24,16 +25,26 @@ namespace Rebus.ActiveMq
 
         public string Address => _activeMqTransportSettings.QueueName;
 
-        public void CreateQueue(string address)
+        public void CreateQueue(string address = null)
         {
             var task = _activeMqSessionHelper.UseSession(async session =>
             {
-                using (var queue = SessionUtil.GetQueue(session.Session, Address))
+                using (var queue = SessionUtil.GetQueue(session.Session, address ?? Address))
                 {
                 }
             });
 
             AsyncHelpers.RunSync(() => task);
+        }
+
+
+
+        internal async Task Delete(string queueName = null)
+        {
+            await _activeMqSessionHelper.UseSession(async session =>
+            {
+                SessionUtil.DeleteQueue(session.Session, queueName ?? Address);
+            });
         }
 
         public async Task<TransportMessage> Receive(ITransactionContext context, CancellationToken cancellationToken)
@@ -79,7 +90,7 @@ namespace Rebus.ActiveMq
                 {
                     msg.Properties.SetString(messageHeader.Key, messageHeader.Value);
                 }
-                
+
                 producer.Send(msg);
             });
         }

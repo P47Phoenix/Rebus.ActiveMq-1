@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Rebus.ActiveMq;
 
-namespace Rebus.ActiveMq
+namespace Rebus
 {
     internal interface IActiveMqSessionHelper
     {

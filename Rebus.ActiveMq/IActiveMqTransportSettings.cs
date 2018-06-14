@@ -1,4 +1,4 @@
-﻿namespace Rebus.ActiveMq
+﻿namespace Rebus
 {
 
     public interface IActiveMqTransportSettings

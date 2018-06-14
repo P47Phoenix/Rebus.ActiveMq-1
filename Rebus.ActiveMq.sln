@@ -14,6 +14,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rebus.ActiveMq", "Rebus.Act
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rebus.ActiveMq.Tests", "Rebus.ActiveMq.Tests\Rebus.ActiveMq.Tests.csproj", "{8B52F3A5-5AC6-4FDB-B5F1-6B5BFDF490E2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F35E4831-D2A3-42F7-95A7-F94DFED00DF7}"
+	ProjectSection(SolutionItems) = preProject
+		DockerStartActiveMQ.ps1 = DockerStartActiveMQ.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
